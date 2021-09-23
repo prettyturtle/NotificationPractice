@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cE0-Cx-mW3">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--오늘의 시간표-->
+        <scene sceneID="qbz-3c-x3I">
+            <objects>
+                <tableViewController id="MbM-JO-488" customClass="AlertListViewController" customModule="NotificationPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RLe-XB-hsd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="U5O-1t-ajC">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U5O-1t-ajC" id="CgK-aE-pwI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MbM-JO-488" id="35R-l1-pAY"/>
+                            <outlet property="delegate" destination="MbM-JO-488" id="B6J-ah-bxu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="오늘의 시간표" id="OZ9-JS-9OI">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Zru-qX-I5l">
+                            <connections>
+                                <action selector="tapAddAlertBarButton:" destination="MbM-JO-488" id="EJP-av-yvX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WqC-5N-xhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="123"/>
+        </scene>
+        <!--Alert Register View Controller-->
+        <scene sceneID="JaG-lt-2uI">
+            <objects>
+                <viewController storyboardIdentifier="AlertRegisterViewController" id="lhU-cF-9dA" customClass="AlertRegisterViewController" customModule="NotificationPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MdC-Vr-R1D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ced-4M-dAa">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="일정 추가" id="AOd-ni-4vJ">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="S29-0a-pl2">
+                                            <connections>
+                                                <action selector="tapCancelBarButton:" destination="lhU-cF-9dA" id="uPv-NC-3Kh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="LN5-xH-wvP">
+                                            <connections>
+                                                <action selector="tapSaveBarButton:" destination="lhU-cF-9dA" id="BRH-2H-d9M"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="TbW-WN-hQ2">
+                                <rect key="frame" x="20" y="113" width="335" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L4t-md-oi1">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLO-r7-Kck">
+                                                <rect key="frame" x="0.0" y="13" width="145" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="KkE-Ai-4vt">
+                                                <rect key="frame" x="145" y="0.0" width="190" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="QN8-sd-sEW"/>
+                                                    <constraint firstAttribute="width" constant="190" id="dbL-iC-8hR"/>
+                                                </constraints>
+                                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vum-ZB-j64">
+                                        <rect key="frame" x="0.0" y="80" width="335" height="68"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgS-hf-8Zc">
+                                                <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="8자 이내로 작성하세요" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-fh-Zjo">
+                                                <rect key="frame" x="0.0" y="34" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ezb-fh-Zjo" secondAttribute="trailing" id="MGW-mO-Uf5"/>
+                                            <constraint firstItem="ezb-fh-Zjo" firstAttribute="leading" secondItem="Vum-ZB-j64" secondAttribute="leading" id="vQP-BD-G0e"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="L4t-md-oi1" secondAttribute="trailing" id="Hor-VF-Hiu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vum-ZB-j64" secondAttribute="trailing" id="bV9-Iy-NJQ"/>
+                                    <constraint firstItem="Vum-ZB-j64" firstAttribute="leading" secondItem="TbW-WN-hQ2" secondAttribute="leading" id="qoo-eM-bgI"/>
+                                    <constraint firstItem="L4t-md-oi1" firstAttribute="leading" secondItem="TbW-WN-hQ2" secondAttribute="leading" id="wbu-EC-0gm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QsB-nw-LgD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ced-4M-dAa" firstAttribute="top" secondItem="QsB-nw-LgD" secondAttribute="top" id="n7v-s5-Avv"/>
+                            <constraint firstItem="TbW-WN-hQ2" firstAttribute="top" secondItem="ced-4M-dAa" secondAttribute="bottom" constant="25" id="nOV-2D-0Rq"/>
+                            <constraint firstItem="ced-4M-dAa" firstAttribute="trailing" secondItem="QsB-nw-LgD" secondAttribute="trailing" id="nQf-m8-IAi"/>
+                            <constraint firstItem="ced-4M-dAa" firstAttribute="leading" secondItem="QsB-nw-LgD" secondAttribute="leading" id="tRa-m6-hNb"/>
+                            <constraint firstAttribute="trailing" secondItem="TbW-WN-hQ2" secondAttribute="trailing" constant="20" id="vMi-8t-oTc"/>
+                            <constraint firstItem="TbW-WN-hQ2" firstAttribute="leading" secondItem="QsB-nw-LgD" secondAttribute="leading" constant="20" id="wQz-Np-Jbq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="KkE-Ai-4vt" id="qwQ-nu-RQc"/>
+                        <outlet property="titleTextField" destination="ezb-fh-Zjo" id="JLk-5m-Asb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uur-wI-uDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4wu-Te-lPH">
+            <objects>
+                <navigationController id="cE0-Cx-mW3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="y8G-v7-ukO">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MbM-JO-488" kind="relationship" relationship="rootViewController" id="E4N-wO-YQs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axS-9U-560" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
